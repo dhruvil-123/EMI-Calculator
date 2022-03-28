@@ -30,13 +30,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Float i1 = Float.valueOf(principal.getText().toString());
-                Float i2 = Float.valueOf(intrest.getText().toString());
-                Float i3 = Float.valueOf(time.getText().toString());
+                Float p = Float.valueOf(principal.getText().toString());
+                Float r = Float.valueOf(intrest.getText().toString());
+                Float n = Float.valueOf(time.getText().toString());
 
-                Float f_ans = (i1*i2*(1+i2)*i3/((1+i2)*(i3-1)));
+                r = r/(12*100);
 
-                result.setText("Your Payable Amount With Intrest : "+(f_ans+i1)+"\n\n"+"Your Intrest is : "+f_ans);
+                float final_r = 1.0f;
+
+                for (int i = 0; i < n*12; i++) {
+                    final_r = final_r*(1+r);
+                }
+
+                float f_ans = p*r*(final_r/(final_r-1));
+
+                result.setText("Your Payable Amount With Intrest : "+(f_ans+p)+"\n\n"+"Your Intrest is : "+f_ans);
             }
         });
 
