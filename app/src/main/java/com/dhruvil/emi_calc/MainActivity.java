@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText principal,intrest,time;
     TextView result;
-    Button reset,ans;
+    Button reset,ans,b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
